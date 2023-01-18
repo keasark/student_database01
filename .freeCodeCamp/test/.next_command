@@ -31,3 +31,6 @@ history -a
 declare -p IFS
 echo $PWD >> ~/project/.freeCodeCamp/test/.cwd
 history -a
+./insert_data.sh
+echo $PWD >> ~/project/.freeCodeCamp/test/.cwd
+history -a
