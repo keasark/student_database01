@@ -84,3 +84,12 @@ history -a
 psql --username=freecodecamp --dbname=postgres
 echo $PWD >> ~/project/.freeCodeCamp/test/.cwd
 history -a
+help -z
+echo $PWD >> ~/project/.freeCodeCamp/test/.cwd
+history -a
+help z
+echo $PWD >> ~/project/.freeCodeCamp/test/.cwd
+history -a
+clear
+echo $PWD >> ~/project/.freeCodeCamp/test/.cwd
+history -a
