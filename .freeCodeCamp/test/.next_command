@@ -139,3 +139,11 @@ history -a
 cp students.csv students_test.csv
 echo $PWD >> ~/project/.freeCodeCamp/test/.cwd
 history -a
+help for
+echo $PWD >> ~/project/.freeCodeCamp/test/.cwd
+history -a
+echo $PWD >> ~/project/.freeCodeCamp/test/.cwd
+history -a
+psql --username=freecodecamp --dbname=postgres
+echo $PWD >> ~/project/.freeCodeCamp/test/.cwd
+history -a
