@@ -7,11 +7,11 @@ echo $($PSQL "TRUNCATE students, majors, courses, majors_courses")
 
 cat courses_test.csv | while IFS="," read MAJOR COURSE
 do
-  # Update major
   if [[ $MAJOR != "major" ]]
   then
     # get major_id
     MAJOR_ID=$($PSQL "SELECT major_id FROM majors WHERE major='$MAJOR'")
+
     # if not found
     if [[ -z $MAJOR_ID ]]
     then
@@ -21,32 +21,29 @@ do
       then
         echo Inserted into majors, $MAJOR
       fi
+
       # get new major_id
       MAJOR_ID=$($PSQL "SELECT major_id FROM majors WHERE major='$MAJOR'")
     fi
-  fi
 
-  if [[ $COURSE != "course" ]]
-    then
     # get course_id
-      COURSE_ID=$($PSQL "SELECT course_id FROM courses WHERE course='$COURSE'")
+    COURSE_ID=$($PSQL "SELECT course_id FROM courses WHERE course='$COURSE'")
+
     # if not found
-      if [[ -z $COURSE_ID ]]
-      then 
-    # insert course
-        INSERT_COURSE_RESULT=$($PSQL "INSERT INTO courses(course) VALUES('$COURSE')")
-        if [[ $INSERT_COURSE_RESULT == "INSERT 0 1" ]]
-        then 
-          echo Inserted into courses, $COURSE
-        fi
-    # get new course_id
+    if [[ -z $COURSE_ID ]]
+    then
+      # insert course
+      INSERT_COURSE_RESULT=$($PSQL "INSERT INTO courses(course) VALUES('$COURSE')")
+      if [[ $INSERT_COURSE_RESULT == "INSERT 0 1" ]]
+      then
+        echo Inserted into courses, $COURSE
       fi
+
+      # get new course_id
+      COURSE_ID=$($PSQL "SELECT course_id FROM courses WHERE course='$COURSE'")
+    fi
+
     # insert into majors_courses
+
   fi
-  
 done
-
-
-    #   fi
-    # # get new course_id
-    #   COURSE_ID=$($PSQL "SELECT course_id FROM courses WHERE course='$COURSE'")
