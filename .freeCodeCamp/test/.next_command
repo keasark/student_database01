@@ -192,3 +192,13 @@ history -a
 pg_dump --clean --create --inserts --username=freecodecamp students > students.sql
 echo $PWD >> ~/project/.freeCodeCamp/test/.cwd
 history -a
+git config --global user.name keasark
+echo $PWD >> ~/project/.freeCodeCamp/test/.cwd
+history -a
+git config --global user.email maixtran.vn@gmail.com
+echo $PWD >> ~/project/.freeCodeCamp/test/.cwd
+history -a
+git init
+echo $PWD >> ~/project/.freeCodeCamp/test/.cwd
+history -a
+git add .
