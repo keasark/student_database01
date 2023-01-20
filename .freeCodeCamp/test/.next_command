@@ -127,3 +127,15 @@ history -a
 ./insert_data.sh
 echo $PWD >> ~/project/.freeCodeCamp/test/.cwd
 history -a
+clear
+echo $PWD >> ~/project/.freeCodeCamp/test/.cwd
+history -a
+./insert_data.sh
+echo $PWD >> ~/project/.freeCodeCamp/test/.cwd
+history -a
+clear
+echo $PWD >> ~/project/.freeCodeCamp/test/.cwd
+history -a
+cp students.csv students_test.csv
+echo $PWD >> ~/project/.freeCodeCamp/test/.cwd
+history -a
